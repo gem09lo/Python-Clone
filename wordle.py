@@ -10,8 +10,35 @@
 #prints all letters available then remove the wrong letters used and return letters left
 #Count the guesses
 
+from rich import print
+print("Hello, [bold red]Rich[/] :snake:")
 
-print("hello")
+from rich.console import Console
+console = Console()
+console.print("Hello, [bold red]Rich[/] :snake:")
+
+def refresh_page(headline):
+    console.clear()
+    console.rule(f"[bold blue]:leafy_green: {headline} :leafy_green:[/]\n")
+
+from rich.console import Console
+console = Console(width=40)
+console.rule(":leafy_green: Wyrdle :leafy_green:")
+
+import pathlib
+import random
+from string import ascii_letters
+
+from rich.console import Console
+from rich.theme import Theme
+
+console = Console(width=40, theme=Theme({"warning": "red on yellow"}))
+
+import wordle
+wordle.refresh_page("Wordle")
+wordle.console.print("Look at me!", style="warning")
+
+
 
 import random
 
