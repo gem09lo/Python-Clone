@@ -29,7 +29,14 @@ def secret_word():
 
 
 def user_input():
-    return (input("Guess a word: ").upper())
+    while True:
+        guess = (input("Guess a word: ").upper())
+        if len(guess) != 5:
+            print("Not a 5-letter word - Try again!")
+            continue
+        else:
+            return guess
+            break
 
 
 def letter_indicator(guess, answer):
